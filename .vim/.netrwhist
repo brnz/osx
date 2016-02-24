@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/brian/Work/foobar/minglish_lesson'
+let g:netrw_dirhist_2='/Users/brian/Work/interview/google_2'
+let g:netrw_dirhist_3='/Users/brian/Work/interview/google_1'
+let g:netrw_dirhist_4='/Users/brian/.Trash/GEBen.epub'
+let g:netrw_dirhist_5='/Users/brian/Work/github_io/about'
