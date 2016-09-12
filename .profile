@@ -1,4 +1,4 @@
-# Author: Brian Z.
+# Author - Brian Z.
 
 # source bashrc if exists
 [ -s "$HOME/.bashrc" ] && . "$HOME/.bashrc"

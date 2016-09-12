@@ -1,4 +1,4 @@
-# Author: Brian Z.
+# Author - Brian Z.
 
 # source global bashrc if exists.
 # important for resume support in Apple Terminal
@@ -8,21 +8,22 @@
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias l='ls'
 alias ls='ls -G'
 alias la='ls -A'
 alias ll='ls -hl'
 alias lla='ls -Ahl'
-alias l='ls'
 alias mv='mv -i'
 alias rm='rm -i'
 # archive extraction/compression
 alias extract='7z x'
 alias ultrazip='7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on'
 # terminal applications
+alias date-ymd='date "+%y-%m-%d"'
 alias mpg123='mpg123 -C'
 # desktop applications
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-alias vlc='$HOME/Applications/VLC.app/Contents/MacOS/VLC'
+#alias vlc='$HOME/Applications/VLC.app/Contents/MacOS/VLC'
 # web applications
 alias music='chrome --app=https://play.google.com/music/listen'
 #--force-device-scale-factor --window-size=1000,800'
@@ -35,6 +36,7 @@ alias refresh-dock='defaults write com.apple.dock ResetLaunchPad -bool true; kil
 
 # Mac ls colorization 
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
+  # TODO - remove highlights and modify `Desktop` colors
   export LSCOLORS=ExGxFxdaCxDADAadhbheEx
 fi
 
@@ -63,10 +65,6 @@ if [ "$USER" = "root" ]; then
 else
   PS1='\h:\w \u\$ '
 fi
-
-export NVM_DIR="/Users/brian/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-. $(brew --prefix nvm)/nvm.sh
 
 export PATH="/usr/local/sbin:$PATH"
 
@@ -116,9 +114,15 @@ fi
 # delete key
 #stty erase 
 
-template () {
+function template() {
   if [ -z "$1" ]; then
     echo "Usage: template <ARGUMENTS>"
   fi
+}
+
+function nvm-init() {
+  export NVM_DIR="/Users/brian/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+  . $(brew --prefix nvm)/nvm.sh
 }
 

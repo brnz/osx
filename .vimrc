@@ -1,4 +1,4 @@
-" Author: Brian Z.
+" AUTHOR: Brian Z.
 
 " define colorscheme
 let theme="solarized"
@@ -20,9 +20,11 @@ set clipboard=unnamed
 " highlight the screen line of the cursor
 set cursorline
 
+set hlsearch
+
 " show invisibles
 set list
-set listchars=tab:»-,eol:¬,space:·
+set listchars=tab:»-,eol:¬,trail:·
 
 " show the line and column number of the cursor position
 set ruler
@@ -36,6 +38,9 @@ set showtabline=1
 
 " enable 2^8 colors
 set t_Co=256
+
+" use visual bell instead of beeping
+set visualbell
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,9 +71,9 @@ endif
 set laststatus=2	" status line always
 set number		" print the line number in front of each line
 set expandtab		" use the appropriate number of spaces to insert a tab
-set shiftwidth=2	" number of spaces to use for each step of (auto)indent
+set shiftwidth=4	" number of spaces to use for each step of (auto)indent
 set smarttab		" <Tab> inserts blanks according to 'shiftwidth'
-set softtabstop=2	" number of spaces <Tab> counts for while editing
+"set softtabstop=2	" number of spaces <Tab> counts for while editing
 set wildmenu		" command-line completion operates in an enhanced mode
 set wim=longest,full	" completion mode that is used for 'wildchar'
 
@@ -89,4 +94,6 @@ map <S-ScrollWheelDown> <C-D>
 " identify syntax highlight group
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+" quick switch buffer
+map <Tab><Tab> :b#<CR>
 
